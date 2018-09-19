@@ -6,15 +6,13 @@ import android.os.Parcelable
 data class Jogo(val resourceId: Int,
                 val titulo: String,
                 val ano: Int,
-                val descricao: String,
-                val bannerId: Int) : Parcelable {
+                val descricao: String) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
             parcel.readString(),
             parcel.readInt(),
-            parcel.readString(),
-            parcel.readInt()) {
+            parcel.readString()) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -22,7 +20,6 @@ data class Jogo(val resourceId: Int,
         parcel.writeString(titulo)
         parcel.writeInt(ano)
         parcel.writeString(descricao)
-        parcel.writeInt(bannerId)
     }
 
     override fun describeContents(): Int {
