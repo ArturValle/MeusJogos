@@ -18,7 +18,7 @@ class ListaJogosActivity : AppCompatActivity() {
 
         rvJogos.adapter = JogosAdapter(this, getJogos(), { jogo ->
             val detalheIntent = Intent(this, DetalheActivity::class.java)
-            detalheIntent.putExtra("TITULO", jogo.titulo)
+            detalheIntent.putExtra("JOGO", jogo)
             startActivity(detalheIntent)
 
         })
